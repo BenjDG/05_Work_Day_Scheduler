@@ -2,8 +2,11 @@ $(document).ready(function () {
 
 
     var DateTime = luxon.DateTime;
-    var localDateTime = DateTime.local();
-    $('#currentDay').text(localDateTime);
+    console.log(DateTime.local().toLocaleString(DateTime.DATE_FULL));
+    //console.log(monthDayYear);
+    $('#currentDay').text(DateTime.local().toLocaleString(DateTime.DATE_HUGE));
+
+   
 
 
 
