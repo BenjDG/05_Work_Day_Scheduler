@@ -27,12 +27,51 @@ $(document).ready(function () {
 
         console.log(time);
         console.log(value);
+        //get date also
+        console.log(calendarData);
+
+        
 
 
 
 
     });
 
+function saveData(time, value, date) {
+    if (time === 't8am') {
+        
+    }
+    if (time === 't9am') {
+        
+    }
+    if (time === 't10am') {
+        
+    }
+    if (time === 't11am') {
+        
+    }
+    if (time === 't12pm') {
+        
+    }
+    if (time === 't1pm') {
+        
+    }
+    if (time === 't2pm') {
+        
+    }
+    if (time === 't3pm') {
+        
+    }
+    if (time === 't4pm') {
+        
+    }
+    else {
+        alert('error');
+    }
+    
+
+    
+}
 
 
 
