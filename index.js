@@ -99,19 +99,21 @@ $(document).ready(function () {
         if (localCalendarData !== null) {
             calendarData = localCalendarData;
         }
-
+        renderData();
     }
     //console.log($('textarea'));
     //console.log(calendarData.data[0]);
-    renderData();
+    //renderData();
     function renderData() {
         var $textarea = $('textarea');
-        $.each($textarea, function (i, value) {
+        $.each($textarea, function (i) {
             //console.log(i);
-            
+
             //console.log(calendarData.data[index]);
-            
-            $('textarea')[i].value = calendarData.data[i];
+            //console.log(value);
+            if (calendarData.data[i] !== undefined && calendarData.data[i] !== null) {
+                $('textarea')[i].value = calendarData.data[i];
+            }
             //console.log(value);
         });
 
