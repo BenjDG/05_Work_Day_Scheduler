@@ -27,7 +27,7 @@ https://benjdg.github.io/05_Work_Day_Scheduler/
 
 ## Usage
 
-Record an event in on of the hour time slots and click the save button to the right of the textbox.
+Record an event in one of the hour time slots and click the save button to the right of the textbox.
 
 
 <br/>
