@@ -31,18 +31,22 @@
 				A simple calendar app for scheduling your work day
 			</p>
 			<p id="currentDay" class="lead"></p>
+			<form>
+				<input type="date" id="selectedDayID" name="selectedDay" value="" />
+				<button class="btn btn-primary" id="selectedDaySubmit" type="submit">Go</button>
+			</form>
 		</header>
 
 		<div class="container">
 			<div class="time-block">
 				<div class="row">
-					<div class="hour description">  8am</div>
+					<div class="hour description">8am</div>
 					<textarea class="" name="t8" value=""></textarea>
 					<button class="saveBtn"><i class="fas fa-save"></i></button>
 				</div>
 
 				<div class="row">
-					<div class="hour description">  9am</div>
+					<div class="hour description">9am</div>
 					<textarea class="" name="t9" value=""></textarea>
 					<button class="saveBtn"><i class="fas fa-save"></i></button>
 				</div>
@@ -66,31 +70,29 @@
 				</div>
 
 				<div class="row">
-					<div class="hour description">  1pm</div>
+					<div class="hour description">1pm</div>
 					<textarea class="" name="t13" value=""></textarea>
 					<button class="saveBtn"><i class="fas fa-save"></i></button>
 				</div>
 
 				<div class="row">
-					<div class="hour description">  2pm</div>
+					<div class="hour description">2pm</div>
 					<textarea class="" name="t14" value=""></textarea>
 					<button class="saveBtn"><i class="fas fa-save"></i></button>
 				</div>
 
 				<div class="row">
-					<div class="hour description">  3pm</div>
+					<div class="hour description">3pm</div>
 					<textarea class="" name="t15" value=""></textarea>
 					<button class="saveBtn"><i class="fas fa-save"></i></button>
 				</div>
 
 				<div class="row">
-					<div class="hour description">  4pm</div>
+					<div class="hour description">4pm</div>
 					<textarea class="" name="t16" value=""></textarea>
 					<button class="saveBtn"><i class="fas fa-save"></i></button>
 				</div>
-
 			</div>
-
 		</div>
 
 		<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>

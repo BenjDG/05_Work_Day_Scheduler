@@ -8,10 +8,7 @@ $(document).ready(function () {
     //get date and time
     var DateTime = luxon.DateTime;
     var todaysDate = DateTime.local();
-    //2019, 5, 5, 12, 00
-    var dt = DateTime.fromObject({hour: 12, day: 22, month:12 , year: 2015})
     var selectedDay = todaysDate;
-    //var selectedDay = todaysDate;
 
 
     var selectedDayShort = selectedDay.toLocaleString(DateTime.DATE_SHORT);
@@ -75,22 +72,35 @@ $(document).ready(function () {
     function saveToLocalStorage() {
         localStorage.setItem(selectedDayShort, JSON.stringify(calendarData));
     }
+
+
+    //load localstorage data into main array
     function loadData() {
+
         localCalendarData = JSON.parse(localStorage.getItem(selectedDayShort));
         if (localCalendarData !== null) {
             calendarData = localCalendarData;
         }
+        
         renderData();
     }
+
+
     //render data on page and color textarea based on current hour
     function renderData() {
         var $textarea = $('textarea');
+
+        //loop textarea and add data
         $.each($textarea, function (i) {
             if (calendarData.data[i] !== undefined && calendarData.data[i] !== null) {
                 $('textarea')[i].value = calendarData.data[i];
             }
+
+            //substring date of each text area
             $textareaName = $('textarea')[i].name;
             var row = $textareaName.substring(1, 3);
+
+            //color rows based on hour of day
             if (+row < currentHour) {
                 $('textarea').eq(i).attr('class', 'past');
             }
@@ -102,4 +112,48 @@ $(document).ready(function () {
             }
         });
     };
+
+
+    var $button = $('#selectedDaySubmit');
+    //console.log($button);
+    $button.on('click', function (event) {
+        event.preventDefault();
+        
+        //clearText();
+        var newDate = $('#selectedDayID').val();
+        //console.log(newDate);
+        //DateTime.fromSQL(newDate);
+        //console.log(DateTime());
+        //console.log(DateTime.fromSQL(newDate));
+        todaysDate = DateTime.fromSQL(newDate);
+        //selectedDay = todaysDate;
+
+
+        selectedDay = todaysDate;
+        // console.log(selectedDay);
+        // console.log(todaysDate);
+
+        selectedDayShort = selectedDay.toLocaleString(DateTime.DATE_SHORT);
+        selectedDayLong = selectedDay.toLocaleString(DateTime.DATE_HUGE);
+
+
+        $('#currentDay').text(selectedDayLong);
+
+        //load data from local storage
+        clearText();
+        loadData();
+
+
+    });
+
+    function clearText() {
+        $('textarea').each(function (i, v) {
+            //console.log(i);
+            //console.log(v);
+            console.log(v.value);
+            v.value = "";
+            calendarData.data[i] = '';
+            
+        });
+    }
 });
