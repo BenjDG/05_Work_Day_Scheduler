@@ -2,7 +2,6 @@
 
 This is a web application that locally persists events into a work day scheduler.
 
-
 <br/>
 <br/>
 
@@ -10,17 +9,19 @@ This is a web application that locally persists events into a work day scheduler
 
 https://benjdg.github.io/05_Work_Day_Scheduler/
 
+<br/>
+<br/>
 
+## Screenshot Desktop
 
+![work day scheduler desktop](./Assets/screenshot.PNG)
 
 <br/>
 <br/>
 
-## Screenshot
+## Screenshot Mobile
 
-![work day scheduler](./Assets/screenshot.PNG)
-
-
+![work day scheduler mobile](./Assets/mobile.PNG)
 
 <br/>
 <br/>
